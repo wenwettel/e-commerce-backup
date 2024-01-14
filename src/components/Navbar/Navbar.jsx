@@ -3,6 +3,8 @@ import './navBarStyles.css';
 import { useState } from 'react';
 
 function Navbar() {
+  /* el estado, la funcion y el span se crea para explicar 
+ como un componente hijo para info a un componente padre */
   const [section, setSection] = useState('Inicio');
   const handleSection = (nameSection) => {
     setSection(nameSection);

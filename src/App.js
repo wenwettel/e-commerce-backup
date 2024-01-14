@@ -1,17 +1,20 @@
-import './App.css';
 import Navbar from './components/Navbar';
 import Counter from './components/Counter';
-
+import CustomInput from './components/CustomInput/CustomInput';
+import { useState, useEffect } from 'react';
+import Button from './components/Button/Button';
 function App() {
-  const handleClick = () => {
-    console.log('click');
+  const [isShow, setIsShow] = useState(false);
+  const handleShowCounter = () => {
+    setIsShow(!isShow);
   };
 
   return (
     <div className="App">
       <Navbar />
-      <Counter />
-      <button onClick={handleClick}>Click</button>
+      <Button onClick={handleShowCounter}>Contador</Button>
+      {isShow && <Counter />}
+      <CustomInput />
     </div>
   );
 }
