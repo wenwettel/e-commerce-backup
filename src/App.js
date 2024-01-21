@@ -1,8 +1,9 @@
 import Navbar from './components/Navbar';
 import Counter from './components/Counter';
-import CustomInput from './components/CustomInput/CustomInput';
-import { useState, useEffect } from 'react';
-import Button from './components/Button/Button';
+import { useState } from 'react';
+import Button from './components/commons/Button/';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 function App() {
   const [isShow, setIsShow] = useState(false);
   const handleShowCounter = () => {
@@ -12,9 +13,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Button onClick={handleShowCounter}>Contador</Button>
-      {isShow && <Counter />}
-      <CustomInput />
+      <ItemListContainer greeting="Bienvenidos!" />
+      <ItemDetailContainer />
     </div>
   );
 }

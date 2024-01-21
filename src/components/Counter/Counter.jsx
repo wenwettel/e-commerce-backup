@@ -1,7 +1,7 @@
 import './counterStyle.css';
 import { useState, useEffect } from 'react';
 //elementos para explicar children (clase 5)
-import Button from '../Button';
+import Button from '../commons/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 function Counter() {
