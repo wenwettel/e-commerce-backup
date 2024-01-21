@@ -15,6 +15,7 @@ function App() {
       <Navbar />
       <ItemListContainer greeting="Bienvenidos!" />
       <ItemDetailContainer />
+      <Counter />
     </div>
   );
 }

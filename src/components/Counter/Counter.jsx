@@ -1,11 +1,14 @@
 import './counterStyle.css';
-import { useState, useEffect } from 'react';
 //elementos para explicar children (clase 5)
 import Button from '../commons/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
+import { useCount } from '../../hooks/useCount';
 function Counter() {
-  const [number, setNumber] = useState(0);
+  const { number, handleAdd, handleSubstract, handleReset } = useCount(
+    0,
+    0,
+    10
+  );
 
   /*Ciclos del componente: mount- change - dismount*/
   /*useEffect(() => {
@@ -16,22 +19,12 @@ function Counter() {
     };
    }, [number]);*/
 
-  useEffect(() => {
-    console.log(`El valor del contador es ${number}`);
-  }, [number]);
-
-  const handleAdd = () => {
-    setNumber(number + 1);
-  };
-
-  const handleSubstract = () => {
-    setNumber(number - 1);
-  };
   return (
     <div className="counter">
       <p>{number}</p>
       <button onClick={handleSubstract}>-</button>
       <button onClick={handleAdd}>+</button>
+      <button onClick={handleReset}>Reset</button>
       <Button text={'Aceptar'}>
         <CheckCircleIcon />
       </Button>
